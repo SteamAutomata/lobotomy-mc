@@ -1,6 +1,7 @@
-package example.examplemod
+package lobotomy
 
-import example.examplemod.block.ModBlocks
+import lobotomy.item.ModItems
+import lobotomy.sound.ModSounds
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -18,9 +19,9 @@ import thedarkcolour.kotlinforforge.forge.runForDist
  *
  * An example for blocks is in the `blocks` package of this mod.
  */
-@Mod(ExampleMod.ID)
-object ExampleMod {
-    const val ID = "examplemod"
+@Mod(LobotomyMod.ID)
+object LobotomyMod {
+    const val ID = "lobotomy"
 
     // the logger for our mod
     val LOGGER: Logger = LogManager.getLogger(ID)
@@ -29,15 +30,15 @@ object ExampleMod {
         LOGGER.log(Level.INFO, "Hello world!")
 
         // Register the KDeferredRegister to the mod-specific event bus
-        ModBlocks.REGISTRY.register(MOD_BUS)
-
+        ModSounds.REGISTRY.register(MOD_BUS)
+        ModItems.REGISTRY.register(MOD_BUS)
         val obj = runForDist(
             clientTarget = {
-                MOD_BUS.addListener(::onClientSetup)
+                MOD_BUS.addListener(LobotomyMod::onClientSetup)
                 Minecraft.getInstance()
             },
             serverTarget = {
-                MOD_BUS.addListener(::onServerSetup)
+                MOD_BUS.addListener(LobotomyMod::onServerSetup)
                 "test"
             })
 
