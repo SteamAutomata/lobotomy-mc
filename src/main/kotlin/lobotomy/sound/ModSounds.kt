@@ -13,6 +13,15 @@ object ModSounds {
     val LOBOTOMY by REGISTRY.registerObject("lobotomy") {
         createSound("lobotomy", 16F)
     }
+    val QUICK by REGISTRY.registerObject("quick") {
+        createSound("quick", 16F)
+    }
+    val BLACKBEARD by REGISTRY.registerObject("blackbeard") {
+        createSound("blackbeard", 16F)
+    }
+    val NADINEMOUK by REGISTRY.registerObject("nadinemouk") {
+        createSound("nadinemouk", 16F)
+    }
 
     private fun createSound(name: String, range: Float): SoundEvent {
         return SoundEvent.createFixedRangeEvent(

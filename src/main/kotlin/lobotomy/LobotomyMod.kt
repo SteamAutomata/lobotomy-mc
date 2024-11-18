@@ -1,6 +1,8 @@
 package lobotomy
 
+import lobotomy.events.PotionEffectOverlay
 import lobotomy.item.ModItems
+import lobotomy.potion.ModEffects
 import lobotomy.sound.ModSounds
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.Mod
@@ -32,6 +34,9 @@ object LobotomyMod {
         // Register the KDeferredRegister to the mod-specific event bus
         ModSounds.REGISTRY.register(MOD_BUS)
         ModItems.REGISTRY.register(MOD_BUS)
+        ModEffects.REGISTRY.register(MOD_BUS)
+
+
         val obj = runForDist(
             clientTarget = {
                 MOD_BUS.addListener(LobotomyMod::onClientSetup)
@@ -52,6 +57,7 @@ object LobotomyMod {
      */
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client...")
+
     }
 
     /**

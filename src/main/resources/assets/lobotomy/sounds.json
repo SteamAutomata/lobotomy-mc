@@ -2,5 +2,17 @@
   "lobotomy": {
     "subtitle": "lobotomy.subtitle.lobotomy",
     "sounds": [ "lobotomy:lobotomy" ]
+  },
+  "quick": {
+    "subtitle": "lobotomy.subtitle.quick",
+    "sounds": [ "lobotomy:quick1", "lobotomy:quick2" ]
+  },
+  "nadinemouk": {
+    "subtitle": "lobotomy.subtitle.nadinemouk",
+    "sounds": [ "lobotomy:nadinemouk" ]
+  },
+  "blackbeard": {
+    "subtitle": "lobotomy.subtitle.blackbeard",
+    "sounds": [ "lobotomy:blackbeard" ]
   }
 }

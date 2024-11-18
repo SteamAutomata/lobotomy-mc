@@ -1,10 +1,12 @@
 package lobotomy.item
 
+import lobotomy.potion.ModEffects
 import lobotomy.sound.ModSounds
 import net.minecraft.sounds.SoundSource
 import net.minecraft.util.RandomSource
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
+import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
@@ -20,19 +22,16 @@ class OrbitoclastItem: Item(Item.Properties().rarity(Rarity.EPIC).stacksTo(1)) {
         pUsedHand: InteractionHand
     ): InteractionResultHolder<ItemStack> {
 
-        if (pLevel.isClientSide()) {
+        pLevel.playSound(
+            pPlayer,
+            pPlayer,
+            ModSounds.LOBOTOMY,
+            SoundSource.MASTER,
+            1F,
+            (random.nextFloat() - random.nextFloat()) * 0.2f + 1.0f
+        )
+        pPlayer.addEffect(MobEffectInstance(ModEffects.LOBOTOMY.get(), -1, 1, true, true))
 
-        } else {
-            pLevel.playSound(
-                pPlayer,
-                pPlayer,
-                ModSounds.LOBOTOMY,
-                SoundSource.MASTER,
-                1F,
-                (random.nextFloat() - random.nextFloat()) * 0.2f + 1.0f
-            )
-        }
-
-        return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand))
+        return InteractionResultHolder.consume(pPlayer.getItemInHand(pUsedHand))
     }
 }
