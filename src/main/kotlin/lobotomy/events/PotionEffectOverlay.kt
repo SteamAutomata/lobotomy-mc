@@ -29,7 +29,12 @@ object PotionEffectOverlay: IGuiOverlay {
     private val BLACKBEARD = ResourceLocation("lobotomy", "textures/blackbeard.png")
     private val LOBOTOMIES = arrayOf(
         ResourceLocation("lobotomy", "textures/lobotomy1.png"),
-        ResourceLocation("lobotomy", "textures/lobotomy2.png")
+        ResourceLocation("lobotomy", "textures/lobotomy2.png"),
+        ResourceLocation("lobotomy", "textures/lobotomy3.png"),
+        ResourceLocation("lobotomy", "textures/lobotomy4.png"),
+        ResourceLocation("lobotomy", "textures/lobotomy5.png"),
+        ResourceLocation("lobotomy", "textures/lobotomy6.png"),
+        ResourceLocation("lobotomy", "textures/lobotomy7.png")
     )
 
 

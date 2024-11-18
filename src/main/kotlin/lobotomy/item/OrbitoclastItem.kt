@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.Level
 
-class OrbitoclastItem: Item(Item.Properties().rarity(Rarity.EPIC).stacksTo(1)) {
+class OrbitoclastItem: Item(Item.Properties().rarity(Rarity.EPIC).stacksTo(1).durability(1)) {
     val random: RandomSource = RandomSource.create()
 
     override fun use(

@@ -88,7 +88,6 @@ class LobotomyEffect() : MobEffect(MobEffectCategory.BENEFICIAL, 0x000000) {
                     // lazy to use weights
                     {randomOverlay(pLivingEntity)},
                     {randomOverlay(pLivingEntity)},
-                    {randomOverlay(pLivingEntity)},
 
                     {burgerOverlay(pLivingEntity)},
                     {blackbeardOverlay(pLivingEntity)},
