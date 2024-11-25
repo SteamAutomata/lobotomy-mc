@@ -64,3 +64,34 @@ ModItems.REGISTRY.register(MOD_BUS)
 ## Tester
 1. Dans Gradle, lancer gen(nom de l'ide)Runs
 2. Une fois les runs générés, il faut ensuite exécuter runClient
+
+## Bonus
+
+Pour apprendre à créer un mod Minecraft, les tutos youtubes ne suffisent pas. 
+Il faut apprendre à se débrouiller. 
+Apprendre à Modder Minecraft avec peu de bases en Java, 
+c'est comme apprendre à cuisiner un carbonara alors qu'on ne sait pas cuire des pâtes.
+Inutile de demander de l'aide sur le serveur Discord de Forge, sinon ils vous sortiront "Learn Java first".
+
+Il faut inspecter le code décompilé du jeu pour connaître comment le jeu a été fait.
+Par exemple, il y a une classe nommé `Items.java` qui répertorie et qui construit TOUS les items du jeu.
+
+Sur Intellij, il faut appuyer deux fois sur Shift pour lancer une recherche. 
+Il faut apprendre à utiliser les outils de recherche d'IntelliJ.
+
+Si vous voulez créer un épée en Ruby, il suffit de voir le code qui crée un épée vanilla:
+```java
+public static final Item WOODEN_SWORD = registerItem("wooden_sword", new SwordItem(Tiers.WOOD, 3, -2.4F, new Item.Properties()));
+public static final Item DIAMOND_SWORD = registerItem("diamond_sword", new SwordItem(Tiers.DIAMOND, 3, -2.4F, new Item.Properties()));
+```
+
+On peut donc modifier le code qui construit le RubySword pour ça:
+```kotlin
+val RUBY_SWORD = REGISTRY.registerObject(
+    "ruby_sword",
+    {
+        // On remixe l'épée en diamant, on peut enregistrer un nouveau Tier.
+        SwordItem(Tiers.DIAMOND, 5, -2.4F, Item.Properties())
+    }
+)
+```
